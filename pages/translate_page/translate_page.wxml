@@ -1,0 +1,128 @@
+<mp-dialog title="提示" show="{{dialogShow}}" bindbuttontap="DialogButton_click" buttons="{{buttons}}">
+    <view>是否添加描述</view>
+</mp-dialog>
+
+<mp-actionSheet bindactiontap="copyItem_SheetClick" show="{{show_copy_Actionsheet}}" actions="{{copyItem}}">
+</mp-actionSheet>
+
+<!-- <mp-actionSheet bindactiontap="wordHouse_SheetClick" show="{{show_WordHouse_Actionsheet}}" actions="{{WordHouse}}"
+    title="选择一个词库让知识分个类">
+</mp-actionSheet> -->
+
+
+
+<!-- picker的配置 -->
+<van-popup round show="{{ show_selet_sheet }}" position="bottom" custom-style="height: 400px;width: 100vw;">
+    
+    <view class="publicRowCenter"
+        style="font-weight: bold;font-size: 18px;height: 30px;background-color: white;margin-top: 10px;margin-bottom: 10px">
+        <text>请选择词库</text>
+    </view>
+
+    <van-picker columns="{{ WordHouse }}" bind:change="onChange" />
+
+    <view class="publicRowAround" style="margin-top: 20px;margin-bottom: 20px">
+        <button bindtap="close_selet_sheet_cancel"
+            style="background-color: #EFEFEF;width: 140px;color: black;font-weight: normal">取消</button>
+        <button bindtap="close_selet_sheet_confirm"
+            style="background-color: #EFEFEF;width: 140px;color: #3974c7;font-weight: normal">确认</button>
+    </view>
+
+</van-popup>
+
+
+
+
+
+
+<scroll-view scroll-y="true" style="width: 100vw;height: 100vh;background-color: #EFEFEF;">
+
+    <view id="maxbox" class="publicColumnSp">
+
+        <!-- 上方的白色模块 -->
+        <view id="upPage" class="publicColumnSp">
+            <view class="tip publicRowSp">
+                <text id="tiptext1">记录</text>
+                <text id="tiptext2" wx:if="{{show_warn_tip}}">{{warn_tip_text}}</text>
+            </view>
+            <view class="input_area">
+                <!-- bindconfirm="complete_input_click" -->
+                <textarea placeholder="请输入需要添加的记录" maxlength="120" 
+                    style="width: 80vw;margin-left: 5vw;margin-top: 10px;font-size: 13px;height: 82px"
+                    bindinput="message_inputing" auto-height="{{false}}" placeholder-style="font-size: 15px;"
+                    show-confirm-bar="{{false}}" value="{{message}}" confirm-type="go"></textarea>
+
+            </view>
+            <view id="add_button_view">
+                <view id="add_button">
+                    <button size="mini" disabled="{{addbutton_disable}}" bindtap="addButtonClick">{{button_text}}</button>
+                </view>
+            </view>
+        </view>
+
+        <!-- 下方的白色模块 -->
+        <view id="boPage" class="publicColumnSp">
+
+            <!-- 第一个解析模块 -->
+            <view class="tip publicRowStart">
+                <text id="explan_tiptext1">解析</text>
+            </view>
+            <view class="input_area">
+                <van-field show-confirm-bar="{{false}}" model:value="{{resTextEn}}" type="textarea" placeholder="解析译文"
+                    autosize border="{{ false }}" custom-style="min-height: 100px;" readonly="{{true}}" />
+            </view>
+
+            <view wx:if="{{no_sentence}}">
+                <!-- 第二个词性模块 -->
+                <view class="tip publicRowStart">
+                    <text id="explan_tiptext2">拓展</text>
+                </view>
+                <view class="input_area">
+                    <van-field show-confirm-bar="{{false}}" model:value="{{word_belongTo}}" type="textarea"
+                        placeholder="词性译文" autosize border="{{ false }}" custom-style="min-height: 100px;"
+                        readonly="{{true}}" />
+                </view>
+
+
+
+                <!-- 第三个短语模块 -->
+                <view class="tip publicRowStart">
+                    <text id="explan_tiptext3">短语</text>
+                </view>
+                <view class="input_area">
+                    <van-field show-confirm-bar="{{false}}" model:value="{{word_phrase}}" type="textarea"
+                        placeholder="短语译文" autosize border="{{ false }}" custom-style="min-height: 100px;"
+                        readonly="{{true}}" />
+                </view>
+
+            </view>
+
+
+            <!-- 下面是配置按钮模块 -->
+            <view id="button_maxview" class="publicRowSp">
+                <!-- <view class="navButton publicColumnSp" bindtap="share_ButtonClick">
+                    <button open-type="share" style="background-color: red; width: 73px;height: 68px;">
+                        <image class="button_icon" src="../../ima/square.png"></image>
+                        <text>分享</text>
+                    </button>
+                </view> -->
+                <button class="navButton1 publicColumnSp" open-type="share">
+                    <!-- <button open-type="share" style="background-color: red; width: 73px;height: 68px;"> -->
+                        <image class="button_icon" src="../../ima/square.png"></image>
+                        <text>分享</text>
+                    <!-- </button> -->
+                </button>
+                <!-- <view class="navButton publicColumnSp" bindtap="addButtonClick">
+                    <image class="button_icon" src="../../ima/add.png"></image>
+                    <text>添加</text>
+                </view> -->
+                <view class="navButton publicColumnSp" bindtap="copy_ButtonClick">
+                    <image class="button_icon" src="../../ima/copy.png"></image>
+                    <text>复制</text>
+                </view>
+            </view>
+
+
+        </view>
+    </view>
+</scroll-view>

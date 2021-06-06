@@ -1,0 +1,28 @@
+<view id="max_view" class="publicColumnSp">
+    <view class="publicColumnCenter">
+        <view id="image_view">
+            <image
+                src="cloud://text-miniprogram1-0ew75t8ac9dca2.7465-text-miniprogram1-0ew75t8ac9dca2-1305229226/ima/noti_logo.png">
+            </image>
+        </view>
+
+        <view id="name">
+            <text>ENoti</text>
+        </view>
+
+        <view id="edition_view">
+            <text>1.0.8</text>
+        </view>
+
+        <van-cell is-link title="打卡日历" bindtap="To_reg_calendar">
+            <van-icon color="#3974c7" slot="icon" name="column" size="20px" custom-style="margin-right: 10px;"
+                class="custom-icon" />
+        </van-cell>
+
+    </view>
+    <view id="about_view" class="publicColumnCenter">
+        <text>由PODIA工作室提供技术支持</text>
+    </view>
+</view>
+
+

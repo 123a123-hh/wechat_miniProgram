@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "mp-dialog": "weui-miniprogram/dialog/dialog",
+    "mp-actionSheet": "weui-miniprogram/actionsheet/actionsheet",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-popup": "@vant/weapp/popup/index"
+  }
+}

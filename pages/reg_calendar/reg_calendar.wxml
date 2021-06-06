@@ -1,0 +1,6 @@
+
+<van-calendar 
+show-confirm="{{false}}" type="multiple" poppable="{{false}}" 
+max-date="{{maxDate}}" min-date="{{minDate}}" default-date="{{num}}" 
+show-mark="{{false}}" show="{{show}}" show-title="{{false}}" disabled="{{true}}"
+/>

@@ -1,0 +1,150 @@
+/* pages/translate_page/translate_page.wxss */
+#maxbox {
+    width: 100vw;
+    height: 100vh;
+    justify-content: flex-start;
+    background-color: #EFEFEF;
+}
+#upPage {
+    width: 88vw;
+    /* height: 200px; */
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* background-color: aqua; */
+    margin-top: 13px;
+    background-color: white;
+    border-radius: 8px;
+    /* box-shadow: 0px 0px 6px rgb(170, 170, 170); */
+    height: auto;
+}
+
+
+/* tip的配置 */
+.tip {
+    width: 88vw;
+    /* background-color: aquamarine; */
+    margin-top: 15px;
+}
+.tip #tiptext1{
+    /* margin-top: 15px; */
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #F4CCF7;
+    border-radius: 8px;
+}
+.tip #tiptext2 {
+    margin-right: 20px;
+    font-size: 13px;
+    color: rgb(241, 89, 89);
+    font-weight: bold;
+}
+#explan_tiptext1 {
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #AFFFE6;
+    border-radius: 8px;
+}
+#explan_tiptext2 {
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #E0EFFE;
+    border-radius: 8px;
+}
+#explan_tiptext3 {
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #F9F1CE;
+    border-radius: 8px;
+}
+
+
+.van-notice-bar{
+    height: 30px !important;
+}
+
+
+
+#boPage {
+    width: 88vw;
+    /* height: 300px; */
+    /* background-color: blanchedalmond; */
+    margin-top: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 8px;
+    /* box-shadow: 0px 0px 6px rgb(153, 153, 153); */
+    /* background-color: bisque; */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.button_icon {
+    width: 18px;
+    height: 18px;
+
+}
+.input_area {
+    width: 88vw;
+    margin-top: 15px;
+    height: auto;
+}
+
+
+/* 导航按钮的配置 */
+#button_maxview {
+    width: 88vw;
+    margin-top: 85px;
+    /* background-color: aqua; */
+}
+.navButton {
+    padding: 10px 20px 10px 20px;
+    font-size: 14px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.navButton1 {
+    padding: 10px 20px 10px 20px !important;
+    font-size: 14px !important;
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+    background-color: white !important;
+    width: 70px !important;
+    font-weight: normal;
+}
+.navButton1 image {
+    margin-bottom: 6px;
+}
+.navButton image {
+    margin-bottom: 6px;
+}
+
+
+
+
+
+/* 创建按钮的配置 */
+#add_button_view {
+    width: 90vw;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    /* justify-content: right; */
+    margin-top: 50px;
+    /* margin-bottom: 10px; */
+}
+#add_button {
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+#add_button button {
+    font-size: 13px !important;
+    font-weight: normal;
+    padding: 2px 15px 2px 15px !important;
+}

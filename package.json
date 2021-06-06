@@ -1,0 +1,17 @@
+{
+  "name": "CET4Note",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@miniprogram-component-plus/tabs": "^1.0.0",
+    "@vant/weapp": "^1.6.8",
+    "weui-miniprogram": "^1.0.8"
+  }
+}

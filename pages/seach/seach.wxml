@@ -1,0 +1,26 @@
+<!-- 引入脚本 -->
+<wxs src="../../wxs_script/my_wxs.wxs" module="tools" />
+
+<view class="page">
+
+	<view id="search_view">
+		<van-search bind:blur="input_blur" bind:focus="input_focus" bind:change="search_inputing_fun" focus="{{true}}" model:value="{{inputtext}}" placeholder="查找" />
+	</view>
+
+	<scroll-view bindscrolltolower="shoeMore_button_click" id="item_scrolView" scroll-y="{{true}}"
+		style="height: 90vh;">
+
+		<view wx:for="{{all_list}}" data-text="{{item}}" id="search_item" class="publicRowStart" bindtap="selectResult">
+			<text class="list_item_text">{{tools.sub(item.text)}}</text>
+		</view>
+
+		<view wx:if="{{is_show_his_view}}" id="his_maxview">
+			<view wx:for="{{his_list}}" data-text="{{item}}" bindtap="his_item_click" class="his_item"><text class="his_text">{{tools.sub(item)}}</text></view>
+		</view>
+
+		<view wx:if="{{all_list.length == 0}}" id="empty_view">
+			<van-empty image="search" description="空空如也" custom-style="width: 100vw;" />
+		</view>
+
+	</scroll-view>
+</view>

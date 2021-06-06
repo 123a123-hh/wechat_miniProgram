@@ -1,0 +1,5 @@
+<!--pages/center/center.wxml-->
+<input class="plan_input" bindinput="plan_inputing" auto-focus placeholder="计划" />
+<button bindtap="Updata_review_plan_click">调整计划</button>
+
+<button bindtap="To_reg_calendar">签到日历</button>

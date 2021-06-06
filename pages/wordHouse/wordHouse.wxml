@@ -1,0 +1,47 @@
+<mp-dialog title="提示" show="{{dialogShow}}" bindbuttontap="DialogButton_click" buttons="{{buttons}}">
+    <view>是否选定该词库单词的迁移位置</view>
+</mp-dialog>
+
+<mp-actionSheet bindactiontap="wordHouse_SheetClick" show="{{showActionsheet}}" actions="{{WordHouselist}}" title="请选择目标词库">
+</mp-actionSheet>
+
+<mp-actionSheet bindactiontap="setting_SheetClick" show="{{show_set_Actionsheet}}" actions="{{set_item}}">
+</mp-actionSheet>
+
+
+<view class="maxbox publicColumnSp">
+	<view>
+
+		<view>
+			<scroll-view id="wordHouse_ScrollView" scroll-y="true">
+				<view class="publicColumnSp">
+
+					<view class="wordHouseItem publicRowCenter" wx:for="{{wordHouses}}" bindtap="wordHouseClick"
+						data-text='{{item.wordHouses_name}}'>
+						<van-card desc="{{item.wordHouse_info}}" class="item_card" thumb="{{item.wordHouse_image}}">
+							<view slot="title" class="wordTitle_view publicRowSp">
+								<text>{{item.wordHouses_name}}</text>
+
+								<van-icon data-text='{{item.wordHouses_name}}' catchtap="wordHouse_moreButton_click" name="ellipsis"
+									class="wordHouse_moreButton"
+									custom-style="transform: rotate(90deg);padding: 10px;" />
+							</view>
+							<view slot="price" class="wordNum_view">
+								<text>单词量 </text>
+								<text>{{item.wordHouse_length}}</text>
+							</view>
+						</van-card>
+					</view>
+
+
+					<view class="add_button_view" bindtap="Add_wordHouseClick">
+						<button id="create_button">新建词库</button>
+					</view>
+				</view>
+			</scroll-view>
+		
+	</view>
+</view>
+
+
+</view>

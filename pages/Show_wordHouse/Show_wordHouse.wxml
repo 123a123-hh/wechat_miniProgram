@@ -1,0 +1,18 @@
+<!--pages/Show_wordHouse/Show_wordHouse.wxml-->
+<!-- <scroll-view scroll-y="true" style="width: 100vw;height: 100vh;background-color: #EFEFEF;">
+</scroll-view> -->
+
+
+<scroll-view id="list_maxView" scroll-y="true" style="background-color: {{backgroundColor}}">
+
+    <view class="list_view" wx:for="{{review_words}}" data-text='{{item}}' bindtap="To_word_info">
+        <mp-cell ext-class="list_cell" hover="{{true}}" value="{{item.key}}">
+            <text class="footer_text" slot="footer">{{item.Add_time}}</text>
+        </mp-cell>
+    </view>
+
+    <view wx:if="{{show_emp_win}}" id="empty_view">
+        <van-empty description="该词库还未添加任何记录, 快去添加吧!" custom-style="width: 100vw;" />
+    </view>
+
+</scroll-view>

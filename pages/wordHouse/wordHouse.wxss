@@ -1,0 +1,46 @@
+
+.maxbox {
+    width: 100vw;
+    height: 100vh;
+    background-color: #EFEFEF;
+}
+
+.wordHouseItem {
+    width: 100vw;
+    /* height: 50px; */
+    /* border-top: solid #cdcdcd 1px; */
+    /* border-radius: 12px;
+    overflow: hidden; */
+    background-color: #EFEFEF;
+}
+#wordHouse_ScrollView {
+    height: 100vh;
+}
+.item_card {
+    margin-top: 10px;
+    width: 100vw;
+    background-color: white;
+    /* overflow: hidden;
+    border-radius: 12px; */
+}
+.wordTitle_view {
+    align-items: flex-start;
+    font-size: 14px;
+    font-weight: bold;
+}
+.add_button_view {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.wordHouse_moreButton:active {
+    background-color: rgb(245, 245, 245);
+}
+#create_button {
+    /* font-size: 13px !important; */
+    font-weight: normal;
+    /* background-color: #cdcdcd !important; */
+    /* color: white !important; */
+    /* padding: 2px 15px 2px 15px !important; */
+}
+
+

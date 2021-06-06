@@ -1,0 +1,90 @@
+
+<mp-dialog title="提示" show="{{showDialog}}" bindbuttontap="DialogButton_click" buttons="{{buttons}}">
+    <view>是否确认修改</view>
+</mp-dialog>
+
+
+<view class="maxbox publicColumnSp">
+
+    <view id="text_view" class="publicColumnCenter">
+        <view id="key_text">
+            记录
+        </view>
+        <textarea disabled="{{true}}" value="{{wordInfo.key}}" placeholder="没有记录" bindinput="key_inputing_event"
+            style="width: 80vw;margin-left: 5vw;margin-top: 10px;font-size: 13px" auto-height="{{false}}"></textarea>
+    </view>
+
+    <view id="bopage">
+        <view id="resolution_view" class="publicColumnCenter">
+            <view id="resolution_text_tip">
+                解析
+            </view>
+            <textarea disabled="{{true}}" value="{{wordInfo.value}}" placeholder="没有添加解析"
+                style="width: 80vw;margin-left: 5vw;margin-top: 10px;font-size: 13px"
+                auto-height="{{false}}" bindinput="value_inputing_event"></textarea>
+        </view>
+
+        <!-- no_sentence模块 -->
+        <view wx:if="{{no_sentence}}">
+            <!-- 第二个词性模块 -->
+            <view class="tip publicRowStart">
+                <text id="explan_tiptext2">拓展</text>
+            </view>
+            <view class="input_area">
+                <textarea disabled="{{true}}" value="{{word_belongTo}}" placeholder="未发现词性"
+                    style="width: 80vw;margin-left: 5vw;margin-top: 10px;font-size: 13px"
+                    auto-height="{{false}}" bindinput="belongto_inputing_event"></textarea>
+            </view>
+
+
+            <!-- 第三个短语模块 -->
+            <view class="tip publicRowStart">
+                <text id="explan_tiptext3">短语</text>
+            </view>
+            <view class="input_area_phrase">
+                <textarea disabled="{{true}}" value="{{word_phrase}}" placeholder="未发现短语" maxlength="400"
+                    style="width: 80vw;margin-left: 5vw;margin-top: 10px;font-size: 13px;height: 330px"
+                    auto-height="{{false}}" bindinput="phrase_inputing_event"></textarea>
+
+            </view>
+
+        </view>
+
+        <view id="describe_maxview">
+            <scroll-view id="describe_scroll_view" scroll-y="{{true}}">
+                <view id="describe_view" class="publicColumnCenter">
+
+                    <view id="describe_text_tip">
+                        描述
+                    </view>
+
+                    <textarea show-confirm-bar="{{false}}" disabled="{{!editable}}" value="{{wordInfo.explainText}}" placeholder="没有添加描述"
+                        style="width: 80vw;margin-left: 5vw;margin-top: 10px;font-size: 13px;height: 70px"
+                        auto-height="{{false}}" bindinput="describe_inputing_event" maxlength="{{60}}"></textarea>
+
+                    <van-uploader deletable="{{false}}" wx:if="{{is_have_image&&!editable}}" file-list="{{fileList}}"
+                        max-count="1" />
+                    <van-uploader deletable="{{true}}" wx:if="{{editable}}" bind:after-read="add_a_image_compelet_event"
+                    bind:delete="delete_a_ima_event" file-list="{{files}}" max-count="1" style="margin-left: 15px;margin-top: 20px;"/>
+
+                </view>
+            </scroll-view>
+        </view>
+
+        <view id="edit_button_view">
+            <view id="delete_button">
+                <button size="mini" bindtap="delete_button_click">删除</button>
+            </view>
+            <view id="edit_button">
+                <button size="mini" bindtap="edit_button_click">{{edit_button_text}}</button>
+            </view>
+        </view>
+
+    </view>
+
+    <view class="publicRowSp" id="wordHouse_and_time_view">
+        <text>{{wordInfo.the_WordHouse_word_belongTo}}</text>
+        <text id="time_text">{{wordInfo.Add_time}}</text>
+    </view>
+
+</view>

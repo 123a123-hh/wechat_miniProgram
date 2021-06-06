@@ -1,0 +1,32 @@
+
+#title_view {
+    width: 90vw;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+#text_view {
+    margin-top: 5px;
+    width: 90vw;
+    color: #706f6f;
+}
+/* #mian_text_view {
+    font-weight: bold;
+} */
+#review_num_text_view {
+    margin-top: 5px;
+}
+/* #time_text_view {
+    font-weight: bold;
+} */
+#title_view2 {
+    width: 90vw;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    /* color: #424242; */
+}
+#exm_text_view {
+    margin-top: 10px;
+    /* font-weight: bold; */
+}

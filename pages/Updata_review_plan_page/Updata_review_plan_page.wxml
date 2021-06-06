@@ -1,0 +1,71 @@
+<view id="maxbox" class="publicColumnCenter">
+    <view id="text_view" class="publicColumnCenter">
+        <view id="title_view" class="publicRowSp">
+            <view id="key_text">
+                词库名称
+            </view>
+            <text id="tip" wx:if="{{warn_tip}}">{{tip_text}}</text>
+        </view>
+        <view id="item_view">
+            <van-cell title="复习次数" custom-style="width: 90vw">
+                <van-stepper integer="{{true}}" value="{{ 1 }}" min="1" max="10" bind:change="reviewNum_Change" />
+            </van-cell>
+
+            <van-cell wx:if="{{showItem[0]}}" title="第1次复习" custom-style="width: 90vw">
+                <van-stepper integer="{{true}}" data-index="{{1}}" value="{{ review1[0] }}" min="1" max="11"
+                    bind:change="onChange" />
+            </van-cell>
+            <van-cell wx:if="{{showItem[1]}}" title="第2次复习" custom-style="width: 90vw">
+                <van-stepper integer="{{true}}" data-index="{{2}}" value="{{ review1[1] }}" min="{{ review1[0]+1 }}"
+                    max="12" bind:change="onChange" />
+            </van-cell>
+            <van-cell wx:if="{{showItem[2]}}" title="第3次复习" custom-style="width: 90vw">
+                <van-stepper integer="{{true}}" data-index="{{3}}" value="{{ review1[2] }}" min="{{ review1[1]+1 }}"
+                    max="15" bind:change="onChange" />
+            </van-cell>
+            <van-cell wx:if="{{showItem[3]}}" title="第4次复习" custom-style="width: 90vw">
+                <van-stepper integer="{{true}}" data-index="{{4}}" value="{{ review1[3] }}" min="{{ review1[2]+1 }}"
+                    max="20" bind:change="onChange" />
+            </van-cell>
+            <van-cell wx:if="{{showItem[4]}}" title="第5次复习" custom-style="width: 90vw">
+                <van-stepper integer="{{true}}" data-index="{{5}}" value="{{ review1[4] }}" min="{{ review1[3]+1 }}"
+                    max="30" bind:change="onChange" />
+            </van-cell>
+            <van-cell wx:if="{{showItem[5]}}" title="第6次复习" custom-style="width: 90vw">
+                <van-stepper integer="{{true}}" data-index="{{6}}" value="{{ review1[5] }}" min="{{ review1[4]+1 }}"
+                    max="50" bind:change="onChange" />
+            </van-cell>
+            <van-cell wx:if="{{showItem[6]}}" title="第7次复习" custom-style="width: 90vw">
+                <van-stepper integer="{{true}}" data-index="{{7}}" value="{{ review1[6] }}" min="{{ review1[5]+1 }}"
+                    max="70" bind:change="onChange" />
+            </van-cell>
+            <van-cell wx:if="{{showItem[7]}}" title="第8次复习" custom-style="width: 90vw">
+                <van-stepper integer="{{true}}" data-index="{{8}}" value="{{ review1[7] }}" min="{{ review1[6]+1 }}"
+                    max="100" bind:change="onChange" />
+            </van-cell>
+            <van-cell wx:if="{{showItem[8]}}" title="第9次复习" custom-style="width: 90vw">
+                <van-stepper integer="{{true}}" data-index="{{9}}" value="{{ review1[8] }}" min="{{ review1[7]+1 }}"
+                    max="140" bind:change="onChange" />
+            </van-cell>
+            <van-cell wx:if="{{showItem[9]}}" title="第10次复习" custom-style="width: 90vw">
+                <van-stepper integer="{{true}}" data-index="{{10}}" value="{{ review1[9] }}" min="{{ review1[8]+1 }}"
+                    max="200" bind:change="onChange" />
+            </van-cell>
+        </view>
+
+
+        <!-- <van-field maxlength="15" model:value="{{wordHouse_Input_Text}}" type="textarea" placeholder="请输入词库名称" autosize
+            border="{{ false }}" custom-style="width: 86vw;margin-left: 2vw;" bind:change="wordHouse_Input_ing" /> -->
+
+        <view id="create_button_view">
+            <view id="guide_view" bindtap="guide_view_click">
+                <text id="guide">调整指引</text>
+            </view>
+            <view id="create_button">
+
+                <button size="mini" disabled="{{button_disable}}"
+                    bindtap="Create_New_WordHouse_Button_Click">修改</button>
+            </view>
+        </view>
+    </view>
+</view>

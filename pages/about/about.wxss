@@ -1,0 +1,38 @@
+#max_view {
+    width: 100vw;
+    height: 100vh;
+}
+#image_view {
+    margin-top: 13vh;
+}
+#image_view image {
+    width: 100px;
+    height: 100px;
+}
+#edition_view {
+    color: #cdcdcd;
+    font-size: 13px;
+}
+#about_view {
+    font-size: 13px;
+    color: #888686;
+    margin-bottom: 10px;
+}
+#name {
+    margin-top: 10px;
+}
+#name text {
+    font-size: 23px;
+    font-weight: bold;
+
+}
+#team_view {
+    margin-top: 10px;
+    width: 200px;
+    color: #888686;
+}
+#official_account_view {
+    margin-top: 10px;
+    width: 200px;
+    color: #888686;
+}

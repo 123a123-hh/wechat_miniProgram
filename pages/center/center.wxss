@@ -1,0 +1,21 @@
+#userInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80px;
+    background-color: rgb(247, 248, 250);
+    margin-bottom: 5px;
+}
+#userImage {
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#userName {
+    margin-left: 12px;
+    color: black;
+    size: 12px;
+}

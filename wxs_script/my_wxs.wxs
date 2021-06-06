@@ -1,0 +1,13 @@
+
+var sub = function(val) {
+  if (val.length == 0 || val == undefined) {
+    return;
+  }
+  if (val.length > 16) {
+    return val.substring(0, 16) + "...";
+  } else {
+    return val;
+  }
+}
+module.exports.sub = sub;
+

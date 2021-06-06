@@ -1,0 +1,28 @@
+{
+  "pages":[
+    "pages/main/main",
+    "pages/index/index",
+    "pages/seach/seach",
+    "pages/center/center",
+    "pages/wordHouse/wordHouse",
+    "pages/Show_wordHouse/Show_wordHouse",
+    "pages/Add_wordHouse/Add_wordHouse",
+    "pages/review_word_page/review_word_page",
+    "pages/reg_calendar/reg_calendar",
+    "pages/word_info/word_info",
+    "pages/translate_page/translate_page",
+    "pages/Updata_review_plan_page/Updata_review_plan_page",
+    "pages/Updata_review_plan_page_main/Updata_review_plan_page_main",
+    "pages/about/about",
+    "pages/official_account/official_account"
+  ],
+  
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#EFEFEF",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

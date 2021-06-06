@@ -1,0 +1,23 @@
+
+
+
+
+#list_maxView{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: #EFEFEF; */
+}
+.list_cell {
+    /* margin-top: 5px; */
+    /* border-top: solid white 1px !important; */
+    /* border-bottom: solid white 1px !important; */
+    background-color: white;
+}
+.list_view {
+    margin-top: 5px;
+}
+.footer_text {
+    font-size: 12px;
+    color: #a7a4a4;
+    margin-left: 10px;
+}

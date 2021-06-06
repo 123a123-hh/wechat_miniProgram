@@ -1,0 +1,76 @@
+/* pages/Add_wordHouse/Add_wordHouse.wxss */
+#maxbox {
+    width: 100vw;
+    height: 100vh;
+    background-color: #EFEFEF;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 100vh;
+}
+#text_view {
+    margin-top: 10px;
+    width: 90vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: white;
+    height: auto;
+    border-radius: 13px;
+    margin-bottom: 20px;
+    /* min-height: 100vh; */
+}
+#key_text {
+    
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #F4CCF7;
+    border-radius: 8px;
+    
+}
+#title_view {
+    width: 90vw;
+    margin-top: 15px;
+    /* background-color: aquamarine; */
+}
+#tip {
+    margin-right: 20px;
+    font-size: 13px;
+    color: rgb(241, 89, 89);
+    font-weight: bold;
+}
+
+/* 中间计划项的配置 */
+#item_view {
+    margin-top: 10px;
+    height: auto;
+}
+#create_button_view {
+    width: 90vw;
+    /* background-color: rgb(179, 133, 201); */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* justify-content: flex-end; */
+    justify-content: space-between;
+    /* justify-content: right; */
+    margin-top: 50px;
+    /* margin-bottom: 10px; */
+}
+#create_button {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    /* background-color: blue; */
+}
+#create_button button {
+    font-size: 13px !important;
+    font-weight: normal;
+    padding: 2px 15px 2px 15px !important;
+    /* background-color: bisque; */
+}
+
+#guide_view text {
+    font-size: 14px;
+    color: #3974c7;
+    padding: 4px 15px 2px 18px;
+    /* background-color: aquamarine; */
+}

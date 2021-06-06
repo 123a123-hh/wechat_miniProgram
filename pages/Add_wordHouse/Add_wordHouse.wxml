@@ -1,0 +1,43 @@
+<!--pages/Add_wordHouse/Add_wordHouse.wxml-->
+
+<view id="maxbox" class="publicColumnCenter">
+	<!-- <input placeholder="请输入词库名称" bindinput="wordHouse_Input_ing"></input> -->
+
+	<view id="text_view" class="publicColumnCenter">
+		<view id="title_view" class="publicRowSp">
+			<view id="key_text">
+				调整计划
+			</view>
+			<text id="tip" wx:if="{{warn_tip}}">{{tip_text}}</text>
+		</view>
+
+		<van-field show-confirm-bar="{{false}}" maxlength="15" model:value="{{wordHouse_Input_Text}}" type="textarea"
+			placeholder="请输入词库名称" autosize border="{{ false }}" custom-style="width: 86vw;margin-left: 2vw;margin-bottom: 50px"
+			bind:change="wordHouse_Input_ing" />
+
+
+		<view id="title_view" class="publicRowSp">
+			<view id="key_text_introdu">
+				词库介绍
+			</view>
+			<text id="tip" wx:if="{{introdu_warn_tip}}">{{introdu_tip_text}}</text>
+		</view>
+
+		<van-field show-confirm-bar="{{false}}" maxlength="14" model:value="{{wordHouse_introdu_Input_Text}}" type="textarea"
+			placeholder="请输入词库介绍" autosize border="{{ false }}" custom-style="width: 86vw;margin-left: 2vw;"
+			bind:change="wordHouse_introdu_Input_ing" />
+
+
+		<view id="create_button_view">
+			<view id="create_button">
+				<button size="mini" disabled="{{button_disable}}"
+					bindtap="{{button_click_funtion_name}}">{{button_text}}</button>
+
+			</view>
+
+		</view>
+
+	</view>
+
+
+</view>

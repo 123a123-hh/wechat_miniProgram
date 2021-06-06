@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-notify": "@vant/weapp/notify/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "mp-icon": "weui-miniprogram/icon/icon"
+  }
+}

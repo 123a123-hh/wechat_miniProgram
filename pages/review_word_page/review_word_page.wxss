@@ -1,0 +1,259 @@
+
+
+/* 设置栏的配置 */
+#set {
+    height: 5vh;
+    background-color: #EFEFEF;
+}
+#set image {
+    width: 15px;
+    height: 15px;
+    /* margin-left: 20px; */
+    margin-right: 20px;
+    padding: 5px;
+}
+#set image:active {
+    background-color: white;
+}
+
+#set text {
+    /* margin-right: 20px; */
+    margin-left: 20px;
+    font-size: 13px;
+}
+.Set_sheet_view {
+    width: 100vw;
+    height: 40vh;
+    justify-content: flex-start;
+}
+.list_status_view {
+    margin-top: 35px;
+    width: 80vw;
+}
+.list_item_view {
+    margin-top: 20px;
+    width: 80vw;
+}
+
+
+
+/* 列表模式的配置 */
+
+#list_maxView{
+    width: 100vw;
+    height: 95vh;
+    background-color: #EFEFEF;
+}
+.list_cell {
+    margin-top: 5px;
+    /* border-top: solid white 1px !important; */
+    /* border-bottom: solid white 1px !important; */
+    background-color: white;
+}
+.footer_text {
+    font-size: 12px;
+    color: #a7a4a4;
+    margin-left: 10px;
+}
+
+
+
+
+/* 普通模式的配置 */
+.page {
+    width: 100vw;
+    height: 95vh;
+    justify-content: flex-start;
+    background-color: #EFEFEF;
+    /* height: auto; */
+}
+.max_scroll_view {
+    height: 95vh;
+    background-color: #EFEFEF;
+}
+/* #title_view {
+    width: 90vw;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+#key_text {
+    font-size: 28px;
+}
+#value_text {
+    font-size: 12px;
+} */
+
+#text_view {
+    margin-top: 2vh;
+    width: 90vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: white;
+    /* height: 180px; */
+    border-radius: 13px;
+    margin-bottom: 2vh;
+    height: 22vh;
+    /* height: auto; */
+}
+#text_view #key_text {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #F4CCF7;
+    border-radius: 8px;
+}
+
+#resolution_view {
+    width: 90vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: white;
+    min-height: 100px;
+    height: auto;
+    border-radius: 13px;
+}
+/* #resolution_view image {
+    width: 56px;
+    height: 22px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+} */
+#resolution_text_tip {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #E0EFFE;
+    border-radius: 8px;
+}
+
+#describe_maxview {
+    width: 90vw;
+    background-color: white;
+    /* height: 400px; */
+    height: auto;
+     /* margin-top: 20px; */
+     margin-bottom: 20px;
+     border-radius: 13px;
+}
+#describe_scroll_view {
+    height: 44vh;
+    /* min-height: 550px;
+    max-height: 600px; */
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+#describe_view {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+#describe_text_tip {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #F3F7D7;
+    border-radius: 8px;
+}
+#describe_image {
+    width: 86vw;
+    height: 160px;
+}
+
+#button_view {
+    width: 90vw;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    /* justify-content: space-around; */
+}
+#noknow_view:active {
+    background-color: rgb(245, 245, 245);
+}
+#know_view:active {
+    background-color: rgb(245, 245, 245);
+}
+#nosure_view:active {
+    background-color: rgb(245, 245, 245);
+}
+#noknow_view {
+    font-size: 14px;
+    padding: 13px 10px 13px 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+#know_view {
+    font-size: 14px;
+    padding:  13px 20px 13px 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+#nosure_view {
+    font-size: 14px;
+    padding: 13px 20px 13px 20px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+#button_view image {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+/* no_sentence模块 */
+/* tip的配置 */
+.tip {
+    width: 88vw;
+    /* background-color: aquamarine; */
+    margin-top: 15px;
+}
+.tip #tiptext1{
+    /* margin-top: 15px; */
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #F4CCF7;
+    border-radius: 8px;
+}
+.tip #tiptext2 {
+    margin-right: 20px;
+    font-size: 13px;
+    color: rgb(241, 89, 89);
+    font-weight: bold;
+}
+#explan_tiptext1 {
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #AFFFE6;
+    border-radius: 8px;
+}
+#explan_tiptext2 {
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #E0EFFE;
+    border-radius: 8px;
+}
+#explan_tiptext3 {
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 1px 12px 1px 12px;
+    background-color: #F9F1CE;
+    border-radius: 8px;
+}
+
+.input_area {
+    width: 88vw;
+    margin-top: 15px;
+    height: auto;
+}
+.input_area_phrea {
+    width: 88vw;
+    margin-top: 15px;
+    height: 270px;
+}

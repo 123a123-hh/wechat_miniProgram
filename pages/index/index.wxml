@@ -1,0 +1,69 @@
+<!-- picker的配置 -->
+<van-popup bind:close="close_selet_sheet_cancel" round show="{{ show_selet_sheet }}" position="bottom" custom-style="height: 320px;width: 100vw;">
+    
+    <view class="publicRowCenter"
+        style="font-weight: bold;font-size: 18px;height: 30px;background-color: white;margin-top: 10px;margin-bottom: 10px">
+        <text>请选择词库</text>
+    </view>
+
+    <van-picker columns="{{ WordHouse }}" bind:change="onChange" />
+
+    <!-- <view class="publicRowAround" style="margin-top: 20px;margin-bottom: 20px">
+        <button bindtap="close_selet_sheet_cancel"
+            style="background-color: #EFEFEF;width: 140px;color: #3974c7;font-weight: normal">取消</button>
+        <button bindtap="close_selet_sheet_confirm"
+            style="background-color: #3974c7;width: 140px;color: white;font-weight: normal">确认</button>
+    </view> -->
+
+</van-popup>
+
+
+
+
+<view>
+
+	<view class="maxbox publicColumnSp">
+		<view>
+			<view class="container publicColumnCenter">
+				<!-- <editor class="ql-container" placeholder="此处可输入相关内容" bindinput="editorInputing">
+				</editor> -->
+
+				<textarea maxlength="{{60}}" show-confirm-bar="{{false}}" placeholder="此处可输入相关内容" id="text_area" bindinput="editorInputing"></textarea>
+
+				<!-- <van-field show-confirm-bar="{{false}}" model:value="{{editorText}}" type="textarea"
+					placeholder="此处可输入相关内容" border="{{ false }}" maxlength="{{100}}"
+					custom-style=" width: 92vw;height: 200px;background-color: white;margin-left: 2vw;" /> -->
+			</view>
+
+			<view class="imageView">
+				<mp-cells>
+					<mp-cell>
+						<mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}"
+							upload="{{uplaodFile}}" max-count="1" title="图片上传"></mp-uploader>
+					</mp-cell>
+				</mp-cells>
+			</view>
+
+			<view id="select_Wordhouse">
+				<mp-cells>
+					<mp-cell link hover value="请选择词库添加" footer="{{TheSelectWordHouse}}" bindtap="show">
+					</mp-cell>
+				</mp-cells>
+
+				<!-- <mp-actionSheet bindactiontap="wordHouse_SheetClick" show="{{showActionsheet}}" actions="{{WordHouse}}"
+					title="选择一个词库让知识分个类">
+				</mp-actionSheet> -->
+			</view>
+
+		</view>
+
+		<view class="buttonView publicRowSp">
+			<button class="addButton" bindtap="addButtonClick">添加</button>
+		</view>
+	</view>
+
+
+
+
+
+</view>

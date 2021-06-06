@@ -1,0 +1,57 @@
+.page {
+    /* background-color: #EFEFEF; */
+    background-color: white;
+}
+#search_item {
+    height: 50px;
+    width: 100vw;
+    /* margin-top: 5px; */
+    background-color: white;
+    /* margin-left: 3vw; */
+    /* border-radius: 4px; */
+    border-top: solid #f5f5f5 1px;
+}
+#search_item:active {
+    background-color: rgb(242, 242, 242);
+}
+.list_item_text {
+    margin-left: 20px;
+    /* background-color: white; */
+}
+#item_scrolView {
+    /* background-color: #EFEFEF; */
+    background-color: white;
+}
+
+/* 历史记录 */
+#his_maxview {
+    height: 82px;
+    width: 100vw;
+    background-color: white;
+    position: relative;
+    top: 0px;
+}
+.his_item {
+    float: left;
+    background-color: #f1f1f1;
+    width: auto;
+    min-width: 50px;
+    height: 30px;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.his_text {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#empty_view {
+    position: absolute;
+    top: 85px;
+    width: 100vw;
+}

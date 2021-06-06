@@ -1,0 +1,20 @@
+<view id="page" class="publicColumnSp">
+    <view id="title_view">
+        <text>调整计划使用说明</text>
+    </view>
+    <view id="text_view">
+        <view id="mian_text_view"><text>本计划是指您添加的每一个记录（单词短语句子）的复习计划</text></view>
+        <view id="review_num_text_view"><text>复习次数：指您希望每一个记录的复习次数</text></view>
+        <view id="time_text_view"><text>第n次复习：指第n次复习距离该记录添加时间的时间长度（单位：天）</text></view>
+        <!-- <view id="exm_text_view"> <text>例如：复习次数设置为2，那么系统一共只会为该记录安排两次复习时间，分别是第一次复习时间和第二次复习时间，如果一个记录的添加时间为2012年3月1号，第一次复习被设置为4，那么2012年3月5号系统就会安排该记录的第一次复习，第二次复习设置为8，那么第二次复习的复习时间是2012年3月9号</text> -->
+        <!-- </view> -->
+    </view>
+    <view id="title_view2">
+        <text>Example</text>
+    </view>
+    <view id="text_view">
+        <view id="exm_text_view"> <text>例如：复习次数设置为2，那么系统一共只会为该记录安排两次复习时间，分别是第一次复习时间和第二次复习时间，如果一个记录的添加时间为2012年3月1号，第一次复习被设置为4，那么2012年3月5号系统就会安排该记录的第一次复习，第二次复习设置为8，那么第二次复习的复习时间是2012年3月9号</text>
+        </view>
+    </view>
+
+</view>

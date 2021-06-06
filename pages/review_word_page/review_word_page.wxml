@@ -1,0 +1,175 @@
+<!-- 引入脚本 -->
+<wxs src="../../wxs_script/my_wxs.wxs" module="tools" />
+
+<van-popup round show="{{ show_set_sheet }}" position="bottom" custom-style="height: 40vh;width: 100vw;"
+    bind:close="close_set_sheet">
+    <view class="Set_sheet_view publicColumnSp">
+
+        <view class="list_status_view publicRowSp">
+            <text>列表模式</text>
+            <van-switch bind:change="list_status_switch_Click" checked="{{ list_status }}" active-color="#07c160"
+                inactive-color="#ee0a24" size="24px" />
+        </view>
+
+        <view wx:if="{{list_status}}">
+            <view class="list_item_view publicRowSp">
+                <text>只显示英文</text>
+                <van-switch bind:change="lang_switch_Click" checked="{{lang_status}}" active-color="#07c160"
+                    inactive-color="#ee0a24" size="24px" />
+            </view>
+            <!-- <view class="list_item_view publicRowSp">
+                <text>只显示中文</text>
+                <van-switch bind:change="song_switch_Click" checked="{{false}}" active-color="#07c160"
+                    inactive-color="#ee0a24" size="24px" />
+            </view>
+            <view class="list_item_view publicRowSp">
+                <text>中英都显示</text>
+                <van-switch bind:change="song_switch_Click" checked="{{false}}" active-color="#07c160"
+                    inactive-color="#ee0a24" size="24px" />
+            </view> -->
+
+        </view>
+
+        <view wx:else>
+
+            <!-- <view class="list_item_view publicRowSp">
+                <text>自动发音</text>
+                <van-switch bind:change="song_switch_Click" checked="{{false}}" active-color="#07c160"
+                    inactive-color="#ee0a24" size="24px" />
+            </view> -->
+
+            <view class="list_item_view publicRowSp">
+                <text>自动显示解析</text>
+                <van-switch bind:change="exp_switch_Click" checked="{{exp_status}}" active-color="#07c160"
+                    inactive-color="#ee0a24" size="24px" />
+            </view>
+
+            <view class="list_item_view publicRowSp">
+                <text>自动显示记录</text>
+                <van-switch bind:change="account_switch_Click" checked="{{acc_status}}" active-color="#07c160"
+                    inactive-color="#ee0a24" size="24px" />
+            </view>
+
+        </view>
+
+    </view>
+</van-popup>
+
+
+
+<van-empty wx:if="{{null_review}}" description="暂时无可复习的内容" />
+
+
+<view wx:if="{{!null_review}}" id="set" class="publicRowSp">
+    <text>{{review_words.length}}</text>
+    <van-icon bindtap="set_buttonImage_click" name="ellipsis" custom-style="padding: 10px;margin-right: 10px" />
+</view>
+
+
+<scroll-view wx:if="{{!null_review}}" class="max_scroll_view" scroll-y="{{true}}">
+
+    <!-- 列表模式配置 -->
+    <view wx:if="{{list_status}}" id="list_maxView">
+
+        <view wx:if="{{lang_status}}" wx:for="{{review_words}}" data-text='{{item}}' bindtap="To_word_info">
+            <mp-cell ext-class="list_cell" hover="{{true}}" value="{{tools.sub(item.key)}}">
+                <text class="footer_text" slot="footer">{{item.Add_time}}</text>
+            </mp-cell>
+        </view>
+
+        <view wx:if="{{!lang_status}}" wx:for="{{review_words}}" data-text='{{item}}' bindtap="To_word_info">
+            <mp-cell ext-class="list_cell" hover="{{true}}" value="{{tools.sub(item.value)}}">
+                <text class="footer_text" slot="footer">{{item.Add_time}}</text>
+            </mp-cell>
+        </view>
+
+    </view>
+
+
+
+
+
+    <!-- 普通模式配置 -->
+    <view wx:else class="page publicColumnSp">
+
+        <view id="text_view" class="publicColumnCenter">
+            <view id="key_text">
+                记录
+            </view>
+            <textarea disabled="{{true}}" value="{{acc}}" placeholder="没有记录"
+                style="width: 80vw;margin-left: 5vw;margin-top: 10px;font-size: 13px"
+                auto-height="{{false}}"></textarea>
+        </view>
+
+        <view id="describe_maxview" class="publicColumnCenter">
+            <scroll-view id="describe_scroll_view" scroll-y="{{true}}">
+
+                <view id="resolution_view" class="publicColumnCenter">
+                    <view id="resolution_text_tip">
+                        解析
+                    </view>
+                    <textarea disabled="{{true}}" value="{{exp}}" placeholder="没有添加解析"
+                        style="width: 80vw;margin-left: 5vw;margin-top: 10px;font-size: 13px"
+                        auto-height="{{false}}"></textarea>
+                </view>
+
+                <!-- no_sentence模块 -->
+                <view wx:if="{{no_sentence}}">
+                    <!-- 第二个词性模块 -->
+                    <view class="tip publicRowStart">
+                        <text id="explan_tiptext2">拓展</text>
+                    </view>
+                    <view class="input_area">
+                        <textarea disabled="{{true}}" value="{{word_belongTo}}" placeholder="未发现词性"
+                            style="width: 80vw;margin-left: 5vw;margin-top: 10px;font-size: 13px"
+                            auto-height="{{false}}"></textarea>
+                    </view>
+
+
+
+                    <!-- 第三个短语模块 -->
+                    <view class="tip publicRowStart">
+                        <text id="explan_tiptext3">短语</text>
+                    </view>
+                    <view class="input_area_phrea">
+                        <textarea disabled="{{true}}" value="{{word_phrase}}" placeholder="未发现短语" maxlength="400"
+                            style="width: 80vw;margin-left: 5vw;margin-top: 10px;font-size: 13px;height: 270px"
+                            auto-height="{{false}}"></textarea>
+                    </view>
+
+                </view>
+
+                <view id="describe_view" class="publicColumnCenter">
+                    <view id="describe_text_tip">
+                        描述
+                    </view>
+                    <textarea disabled="{{true}}" value="{{the_show_word.explainText}}" placeholder="没有添加描述"
+                        style="width: 80vw;margin-left: 5vw;margin-top: 10px;font-size: 13px;height: 80px"
+                        auto-height="{{false}}"></textarea>
+                    <van-uploader wx:if="{{is_have_image}}" file-list="{{ fileList }}" max-count="1"
+                        style="margin-left: 15px;" />
+                </view>
+
+
+            </scroll-view>
+        </view>
+
+        <view id="button_view" class="publicRowSp">
+            <view id="know_view" class="publicColumnCenter" bindtap="know_click">
+                <image src="../../ima/know.png"></image>
+                <text>认识</text>
+            </view>
+            <view id="nosure_view" class="publicColumnCenter" bindtap="nosure_click">
+                <image src="../../ima/nosure.png"></image>
+                <text>模糊</text>
+            </view>
+            <view id="noknow_view" class="publicColumnCenter" bindtap="noknow_click">
+                <image src="../../ima/noknow.png"></image>
+                <text>不认识</text>
+            </view>
+        </view>
+
+    </view>
+
+
+</scroll-view>

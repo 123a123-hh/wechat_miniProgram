@@ -1,0 +1,158 @@
+.maxbox {
+    height: 100vh;
+    width: 100vw;
+    justify-content: flex-start;
+    background-color: #EFEFEF
+}
+
+
+
+/* 侧边栏的配置 */
+.nav {
+    width: 100vw;
+    justify-content: flex-start;
+    height: 5vh;
+}
+
+.nav_icon {
+    /* padding: 30rpx; */
+    padding: 10px 10px 10px 10px;
+    width: 35rpx;
+    height: 35rpx;
+    margin-left: 10px;
+}
+
+.nav_icon:active {
+    background-color: rgb(245, 245, 245);
+}
+.nav_icon2 {
+    padding: 30rpx 20rpx 30rpx 60rpx;
+    width: 95rpx;
+    height: 45rpx;
+}
+.nav_icon2:active {
+    background-color: rgb(245, 245, 245);
+}
+
+
+
+/* 打卡盒子的配置 */
+.punchCard {
+    /* margin-bottom: 60rpx;
+    margin-top: 60rpx; */
+    height: 20vh;
+    margin-top: 5vh;
+
+}
+
+.punchCard .card {
+    font-weight: normal;
+    font-size: 60rpx;
+    background-color: #EFEFEF !important;
+    font-size: 48rpx;
+    
+}
+
+.punchCard .tip {
+    color: rgb(175, 175, 175);
+    font-size: 28rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* 下面四个小框的配置 */
+.main {
+    /* margin-top: 70rpx; */
+    flex-wrap: wrap;
+    height: 70vh;
+    width: 100vw;
+    /* background-color: wheat; */
+}
+
+.learn {
+    width: 210rpx;
+    height: 270rpx;
+    padding: 50rpx;
+    margin-top: 40rpx;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    border-radius: 20rpx;
+}
+
+.learn:active {
+    background-color: rgb(245, 245, 245);
+}
+
+
+
+/* 图标的配置 */
+.search_icon {
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 50rpx;
+    margin-left: 10rpx;
+}
+
+.add_icon {
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 50rpx;
+    margin-left: 10rpx;
+}
+
+.review_icon {
+    width: 57rpx;
+    height: 57rpx;
+    margin-right: 50rpx;
+    margin-left: 10rpx;
+}
+
+.wordHouse_icon {
+    width: 43rpx;
+    height: 43rpx;
+    margin-right: 55rpx;
+    margin-left: 20rpx;
+}
+
+
+
+/* 侧边栏的配置 */
+#userInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80px;
+    background-color: rgb(247, 248, 250);
+    margin-bottom: 5px;
+}
+#userImage {
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#userName {
+    margin-left: 12px;
+    color: black;
+    size: 12px;
+}
+
+#userInfo2 {
+    width: 80px;
+    height: 80px;
+    background-color: #EFEFEF;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#userInfo2 image {
+    width: 70px;
+    height: 70px;
+}

@@ -1,0 +1,94 @@
+<!-- 引入脚本 -->
+<wxs src="../../wxs_script/my_wxs.wxs" module="tools" />
+
+
+<!-- 侧边栏的配置 -->
+<van-popup show="{{ show }}" position="left" custom-style="height: 100vh;width: 70vw;" bind:close="Close_popupWin">
+	<view class="publicColumnSp" style="height: 100vh;width: 70vw;">
+	<view>
+	<block wx:if="{{canIUseOpenData}}">
+		<view id="userInfo">
+			<open-data type="userAvatarUrl" id="userImage"></open-data>
+			<open-data type="userNickName" id="userName"></open-data>
+		</view>
+	</block>
+
+	<van-cell is-link title="调整计划" title-style="size: 13px;" custom-style="width: 70vw" bindtap="Updata_review_plan_buttonClick">
+		<van-icon color="#3974c7" slot="icon" name="todo-list" size="20px" custom-style="margin-right: 10px;"
+			class="custom-icon" />
+	</van-cell>
+	<van-cell is-link title="打卡日历" bindtap="To_reg_calendar">
+		<van-icon color="#be2edd" slot="icon" name="column" size="20px" custom-style="margin-right: 10px;"
+			class="custom-icon" />
+	</van-cell>
+	<!-- <van-cell is-link title="反馈">
+		<van-icon color="#3974c7" slot="icon" name="warning" size="20px" custom-style="margin-right: 10px;"
+			class="custom-icon" />
+	</van-cell> -->
+	<van-cell is-link title="使用说明" bindtap="userIntordu_button_click">
+		<van-icon color="#f0932b" slot="icon" name="comment-circle" size="20px" custom-style="margin-right: 10px;"
+			class="custom-icon" />
+	</van-cell>
+	<!-- <van-cell is-link title="设置">
+		<van-icon color="#3974c7" slot="icon" name="setting" size="20px" custom-style="margin-right: 10px;"
+			class="custom-icon" />
+	</van-cell> -->
+	<van-cell is-link title="关于" bindtap="about_button_click">
+		<van-icon color="#8c7ae6" slot="icon" name="question" size="20px" custom-style="margin-right: 10px;"
+			class="custom-icon" />
+	</van-cell>
+</view>
+	<button open-type="feedback" style="font-size: 14px;background-color: white;font-weight: normal;color: #3974c7;margin-bottom: 10px;">反馈</button>
+</view>
+</van-popup>
+
+
+<!-- 主页面的配置 -->
+<view class="maxbox publicColumnSp">
+
+	<view class="nav publicRowSp">
+		<!-- <image bindtap="Show_popupWin" class="nav_icon" src="../../ima/md-dehaze@1x.png"></image> -->
+		<van-icon bindtap="Show_popupWin" name="wap-nav" class="nav_icon" />
+	</view>
+
+	<view class="punchCard">
+		<button wx:if="{{!is_clock_in}}" bindtap="Register_Button_Click" class="card">ClockIn</button>
+		<view wx:if="{{!is_clock_in}}" class="tip">打卡每一天</view>
+
+		<view wx:if="{{is_clock_in}}" class="card" style="margin-top: 10px" bindtap="word_click">
+			<text>{{tools.sub(the_random_word)}}</text>
+		</view>
+	</view>
+
+	<view class="main">
+		<view class="publicRowCenter">
+			<view class="learn" bindtap="addButtonClick">
+				<image class="add_icon" src="../../ima/md-border_color@2x.png"></image>
+				<view class="right">
+					<view>记录</view>
+				</view>
+			</view>
+			<view class="learn" bindtap="review_button_click">
+				<image class="review_icon" src="../../ima/md-restore@2x.png"></image>
+				<view class="right">
+					<view>复习</view>
+				</view>
+			</view>
+		</view>
+		<view class="publicRowCenter">
+			<view class="learn" bindtap="search_button_click">
+				<image class="search_icon" src="../../ima/md-search@2x.png"></image>
+				<view class="right">
+					<view>查找</view>
+				</view>
+			</view>
+			<view class="learn" bindtap="wordHouse_button_click">
+				<image class="wordHouse_icon" src="../../ima/md-filter_none@2x.png"></image>
+				<view class="right">
+					<view>词库</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>
