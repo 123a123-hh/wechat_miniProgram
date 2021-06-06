@@ -12,6 +12,7 @@ Page({
     editorText: "",
     imageName: "无",
     files: [],
+    is_in_MyWordDB: "",
 
     // sheet框的配置  选择词库控件配置开始
     TheSelectWordHouse: "默认词库",
@@ -49,7 +50,8 @@ Page({
       inputText: op.inputText,
       word_belongTo: op.word_belongTo,
       word_phrase: op.word_phrase,
-      no_sentence: op.no_sentence
+      no_sentence: op.no_sentence,
+      is_in_MyWordDB: op.is_in_MyWordDB
     })
     console.log(op.no_sentence)
   },
@@ -268,7 +270,7 @@ Page({
         filePath,
         success: res => {
           console.log('[上传文件] 成功：', res)
-          if (hh.data.no_sentence == "true") {
+          if (hh.data.no_sentence == "true" && hh.data.is_in_MyWordDB == "false" && hh.data.resTextEn.length != 0) {
             app.insert_a_item_To_MyWordDB(hh.data.inputText, hh.data.resTextEn, hh.data.word_belongTo, hh.data.word_phrase)
           }
           wx.hideLoading()
@@ -283,7 +285,7 @@ Page({
           hh.clearData()
         },
         fail: e => {
-          if (hh.data.no_sentence == "true") {
+          if (hh.data.no_sentence == "true" && hh.data.is_in_MyWordDB == "false" && hh.data.resTextEn.length != 0) {
             app.insert_a_item_To_MyWordDB(hh.data.inputText, hh.data.resTextEn, hh.data.word_belongTo, hh.data.word_phrase)
           }
           console.error('[上传文件] 失败：', e)
@@ -300,7 +302,7 @@ Page({
         }
       })
     } else {
-      if (hh.data.no_sentence == "true") {
+      if (hh.data.no_sentence == "true" && hh.data.is_in_MyWordDB == "false" && hh.data.resTextEn.length != 0) {
         app.insert_a_item_To_MyWordDB(hh.data.inputText, hh.data.resTextEn, hh.data.word_belongTo, hh.data.word_phrase)
       }
       wx.hideLoading()

@@ -143,7 +143,7 @@ Page({
     init_clock_in() {
         var hh = this
         app.check_clock_in().then(index => {
-            console.log(index)
+            console.log("打卡状态",index)
             var review_word_today = app.globalData.all_added_word
             if (review_word_today.length != 0) {
                 var random_num = parseInt(review_word_today.length * Math.random())

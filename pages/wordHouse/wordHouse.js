@@ -42,7 +42,8 @@ Page({
             value: "编辑"
         }],
         show_set_Actionsheet: false,
-        wordHouse_name: ""
+        wordHouse_name: "",
+        wordHouse_name_info: ""
 
     },
     onShow: function () {
@@ -191,7 +192,8 @@ Page({
     wordHouse_moreButton_click(e) {
         console.log(e.currentTarget.dataset.text)
         this.setData({
-            wordHouse_name: e.currentTarget.dataset.text
+            wordHouse_name: e.currentTarget.dataset.text,
+            wordHouse_name_info: e.currentTarget.dataset.textinfo
         })
         this.Get_WordHouselist_form_app_WordHouseQuery();
         this.show_set_Actionsheet()
@@ -215,7 +217,7 @@ Page({
     },
     // 设置sheet点击事件
     setting_SheetClick(e) {
-        console.log(e.detail.value)
+        console.log("点击了",e.detail.value)
         var hh = this
         var theSelect_set = e.detail.value
         hh.close_set_Actionsheet()
@@ -225,7 +227,9 @@ Page({
             if (hh.data.wordHouse_name != "默认词库") {
                 var page = "编辑词库"
                 wx.navigateTo({
-                    url: '../Add_wordHouse/Add_wordHouse?page=' + page + '&wordHouseName=' + hh.data.wordHouse_name,
+                    url: '../Add_wordHouse/Add_wordHouse?page=' + page + 
+                    '&wordHouseName=' + hh.data.wordHouse_name +
+                    '&wordHouse_info=' + hh.data.wordHouse_name_info,
                 })
             } else {
                 wx.showToast({

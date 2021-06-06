@@ -580,7 +580,6 @@ App({
     var len = await (await db.collection('word').where({
       _openid: hh.globalData.openid
     }).count()).total
-    console.log(len)
     if (len <= 20) {
       db.collection('word').where({
           _openid: hh.globalData.openid

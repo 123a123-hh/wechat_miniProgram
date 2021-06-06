@@ -132,7 +132,7 @@ Page({
     Get_WordHouse_form_app_WordHouseQuery() {
         console.log(this.data.app_wordHouse)
         this.setData({
-            app_wordHouse: app.globalData.WordHouseQuery
+            app_wordHouse: app.globalData.WordHouseQuery,
         })
     },
     check_Is_Repeated_NewWordHouse_in_appWordHouse(the_New_WordHouse_Name) {
@@ -192,7 +192,9 @@ Page({
             hh.setData({
                 button_text: "确认",
                 button_click_funtion_name: "updata_wordHouse_name_funtion",
-                the_selected_wordHouse_name: op.wordHouseName
+                the_selected_wordHouse_name: op.wordHouseName,
+                wordHouse_introdu_Input_Text: op.wordHouse_info,
+                wordHouse_Input_Text: op.wordHouseName,
             })
         }
     },
@@ -222,15 +224,27 @@ Page({
                                     icon: 'success',
                                     title: '保存成功'
                                 })
+
                                 // 添加完函数以后立刻 提示输入名称 并且重置输入框 重置原词库名词
-                                hh.setData({
-                                    the_selected_wordHouse_name: hh.data.wordHouse_Input_Text,
-                                    button_disable: true,
-                                    warn_tip: true,
-                                    tip_text: "请输入名称",
-                                    wordHouse_Input_Text: "",
-                                    wordHouse_introdu_Input_Text: ""
-                                })
+                                if(hh.data.page_status == "新建词库"){
+                                    hh.setData({
+                                        the_selected_wordHouse_name: hh.data.wordHouse_Input_Text,
+                                        button_disable: true,
+                                        warn_tip: true,
+                                        tip_text: "请输入名称",
+                                        wordHouse_Input_Text: "",
+                                        wordHouse_introdu_Input_Text: ""
+                                    })
+                                }else if(hh.data.page_status == "编辑词库"){
+                                    hh.setData({
+                                        the_selected_wordHouse_name: hh.data.wordHouse_Input_Text,
+                                        button_disable: true,
+                                        // warn_tip: true,
+                                        // tip_text: "请输入名称",
+                                        // wordHouse_Input_Text: "",
+                                        // wordHouse_introdu_Input_Text: ""
+                                    })
+                                }
                             }
                         })
 

@@ -87,26 +87,35 @@ Page({
             hh.complete_input_click()
         } else if (hh.data.button_text == "添加") {
 
-            if (hh.data.resTextEn.length == 0) {
-                wx.showToast({
-                    icon: 'error',
-                    title: '未找到译文'
-                })
-            } else {
-                app.check_is_exist_a_word(hh.data.message).then(res => {
-                    if (res) {
-                        wx.showToast({
-                            icon: 'error',
-                            title: '该记录已存在'
-                        })
-                    } else {
-                        hh.showDialog()
+            // if (hh.data.resTextEn.length == 0) {
+            //     wx.showToast({
+            //         icon: 'error',
+            //         title: '未找到译文'
+            //     })
+            // } else {
+            //     app.check_is_exist_a_word(hh.data.message).then(res => {
+            //         if (res) {
+            //             wx.showToast({
+            //                 icon: 'error',
+            //                 title: '该记录已存在'
+            //             })
+            //         } else {
+            //             hh.showDialog()
+            //         }
+            //     })
+            // }
+            app.check_is_exist_a_word(hh.data.message).then(res => {
+                if (res) {
+                    wx.showToast({
+                        icon: 'error',
+                        title: '该记录已存在'
+                    })
+                } else {
+                    hh.showDialog()
 
-                    }
+                }
 
-                })
-
-            }
+            })
         }
 
     },
@@ -256,7 +265,7 @@ Page({
     //         console.log("未加载用户的词库")
     //     }
     // },
-    
+
     Get_WordHouse_form_app_WordHouseQuery() {
         var WordHouseQuery = [].concat(app.globalData.WordHouseQuery);
         console.log(WordHouseQuery)
@@ -289,11 +298,12 @@ Page({
         })
 
     },
+    //选择词库弹出窗口 点击的确认
     close_selet_sheet_confirm() {
         this.setData({
             show_selet_sheet: false
         })
-        console.log(this.data.TheSelectWordHouse)
+        console.log("选择的词库为：", this.data.TheSelectWordHouse)
         var hh = this
         // 点击词库以后立刻转换按钮的文本
         hh.chage_button_text()
@@ -305,7 +315,7 @@ Page({
                     title: '新增记录失败'
                 })
             } else {
-                if (hh.data.no_sentence == true && hh.data.is_in_MyWordDB == false) {
+                if (hh.data.no_sentence == true && hh.data.is_in_MyWordDB == false && hh.data.resTextEn.length != 0) {
                     app.insert_a_item_To_MyWordDB(hh.data.message, hh.data.resTextEn, hh.data.word_belongTo, hh.data.word_phrase)
                 }
                 // 插入成功后重新获取所有单词
@@ -353,7 +363,8 @@ Page({
                     '&inputText=' + hh.data.message.replace(/[?&'"/]/g, "") +
                     '&word_belongTo=' + hh.data.word_belongTo.replace(/[?&'"/]/g, "") +
                     '&word_phrase=' + hh.data.word_phrase.replace(/[?&'"/]/g, "") +
-                    '&no_sentence=' + hh.data.no_sentence.toString(),
+                    '&no_sentence=' + hh.data.no_sentence.toString() +
+                    '&is_in_MyWordDB=' + hh.data.is_in_MyWordDB.toString(),
             })
         } else if (e.detail.item.text == "否") {
             // hh.show_WordHouse_Actionsheet()
@@ -368,7 +379,7 @@ Page({
 
 
 
-    // 上方的输入框 点击完成的事件
+    // 输入框输入东西以后 点击翻译的事件
     complete_input_click() {
         wx.showLoading({
             title: '加载中',
@@ -396,6 +407,14 @@ Page({
                             })
                         }
                         wx.hideLoading()
+
+                        // 如果爬取不到数据 那么提示一下
+                        if (hh.data.resTextEn.length == 0) {
+                            wx.showToast({
+                                icon: 'error',
+                                title: '抱歉未找到译文'
+                            })
+                        }
                     })
                 } else {
                     hh.setData({
@@ -801,11 +820,19 @@ Page({
                         }
                     }
 
-
-                    var data = {
-                        resTextEn: ans,
-                        word_belongTo: wordbelongto,
-                        word_phrase: phrase,
+                    // 如果找不到解析那么短语和拓展都不要显示出来了
+                    if (ans.length == 0) {
+                        var data = {
+                            resTextEn: "",
+                            word_belongTo: "",
+                            word_phrase: "",
+                        }
+                    } else {
+                        var data = {
+                            resTextEn: ans,
+                            word_belongTo: wordbelongto,
+                            word_phrase: phrase,
+                        }
                     }
                     resolve(data)
                 },

@@ -22,7 +22,7 @@
 							<view slot="title" class="wordTitle_view publicRowSp">
 								<text>{{item.wordHouses_name}}</text>
 
-								<van-icon data-text='{{item.wordHouses_name}}' catchtap="wordHouse_moreButton_click" name="ellipsis"
+								<van-icon data-text='{{item.wordHouses_name}}' data-textinfo='{{item.wordHouse_info}}' catchtap="wordHouse_moreButton_click" name="ellipsis"
 									class="wordHouse_moreButton"
 									custom-style="transform: rotate(90deg);padding: 10px;" />
 							</view>
