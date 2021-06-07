@@ -53,7 +53,7 @@
 
 	<view class="punchCard">
 		<button wx:if="{{!is_clock_in}}" bindtap="Register_Button_Click" class="card">ClockIn</button>
-		<view wx:if="{{!is_clock_in}}" class="tip">打卡每一天</view>
+		<view wx:if="{{!is_clock_in}}" class="tip">点击ClockIn打卡</view>
 
 		<view wx:if="{{is_clock_in}}" class="card" style="margin-top: 10px" bindtap="word_click">
 			<text>{{tools.sub(the_random_word)}}</text>
