@@ -11,7 +11,7 @@
         </view>
 
         <view id="edition_view">
-            <text>1.0.8</text>
+            <text>1.0.9</text>
         </view>
 
         <van-cell is-link title="打卡日历" bindtap="To_reg_calendar">
